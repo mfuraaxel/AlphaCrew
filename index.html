@@ -391,6 +391,46 @@
       padding: 15px 0;
     }
 
+/* ABOUT US VALUES */
+.about-values {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.value-box {
+  background: #eaf4ff;
+  border-radius: 15px;
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.value-box i {
+  font-size: 2rem;
+  color: #0066cc;
+  margin-bottom: 10px;
+}
+
+.value-box h3 {
+  color: #003366;
+  margin-bottom: 10px;
+}
+
+.value-box p {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.value-box:hover {
+  transform: translateY(-5px);
+  background: #d0e4ff;
+}
+
+   
     /* RESPONSIVE DESIGN */
     @media (max-width: 768px) {
       #history, #prototype {
@@ -402,6 +442,33 @@
         width: 100%;
       }
     }
+
+   /* ABOUT SECTION MOBILE ENHANCEMENTS */
+@media (max-width: 768px) {
+  #about h2 {
+    font-size: 1.8rem;
+  }
+
+  #about p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .team-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .team-box {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .team-box img {
+    height: 200px; /* keep aspect ratio reasonable */
+  }
+}
+
   </style>
 </head>
 <body>
@@ -417,7 +484,7 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#challenges">Challenges</a></li>
        <li><a href="#prototype">Prototype</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a href="#about">Our Team</a></li>
       </ul>
     </nav>
   </header>
@@ -494,10 +561,11 @@
     <h2>Our Challenges</h2>
     <p>Explore our creative challenges and tasks on our YouTube channel.</p>
     <div class="challenge-list">
-      <a href="https://youtube.com/" target="_blank">🎥 Task 1: Creative Photography</a>
-      <a href="https://youtube.com/" target="_blank">🎬 Task 2: Art & Culture Documentary</a>
-      <a href="https://youtube.com/" target="_blank">🎶 Task 3: Music Collaboration</a>
-      <a href="https://youtube.com/" target="_blank">🎭 Task 4: Cultural Dance Showcase</a>
+      <a href="https://youtu.be/YEbZL_R8XpM?si=-d4D47gMrKePTBRA" target="_blank">🎥 MEET THE ALPHA CREW</a>
+      <a href="https://youtu.be/4_otiQagMCY?si=-5oHAUQ74uc454MZ" target="_blank">🎬 Discover Africa</a>
+      <a href="https://youtu.be/fhnLiFQAscU?si=NvUSODa4ofmGcFSp" target="_blank"> ALPHA CREW is back</a>
+      <a href="https://youtu.be/1YzxHQdtTug?si=_IOPqrw081f5UQRB" target="_blank"> 🎶 Meet the artist</a>
+     <a href="https://youtu.be/7KjiwOz6KBw?si=tZUMn84SzMISXu7h" target="_blank"> KIVU CREATIVE CO.</a>
     </div>
   </section>
 
@@ -514,7 +582,25 @@
   <section id="about">
     <h2>About Us</h2>
     <p>KIVU CREATIVES CO. is a youth-led creative organization in Musanze, Rwanda. We use arts, culture, and design to empower youth and promote creative employment.</p>
-    <div class="team-container">
+<div class="about-values">
+    <div class="value-box">
+      <i class="fa-solid fa-lightbulb"></i>
+      <h3>Our Vision</h3>
+      <p>To cultivate a vibrant creative ecosystem where youth can thrive and contribute to Rwanda’s cultural and artistic growth.</p>
+    </div>
+    <div class="value-box">
+      <i class="fa-solid fa-heart"></i>
+      <h3>Our Mission</h3>
+      <p>Empowering youth through arts, culture, and design while promoting innovation, skill development, and entrepreneurship.</p>
+    </div>
+    <div class="value-box">
+      <i class="fa-solid fa-globe"></i>
+      <h3>Our Impact</h3>
+      <p>We connect local talent to global opportunities, create creative jobs, preserve cultural heritage, and celebrate the identity of Musanze.</p>
+    </div>
+  </div>
+   
+   <div class="team-container">
       <div class="team-box"><img src="davina.jpeg" alt="Mwamikazi Davina"><h3>Mwamikazi Davina</h3></div>
       <div class="team-box"><img src="missionary.jpeg" alt="Nkurunziza Missionary"><h3>Nkurunziza Missionary</h3></div>
       <div class="team-box"><img src="annicia.jpeg" alt="Akaliza Muhizi Annicia"><h3>Akaliza Muhizi Annicia</h3></div>
