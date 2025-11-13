@@ -4,7 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KIVU CREATIVES CO.</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
   <style>
     * {
       margin: 0;
@@ -55,16 +61,24 @@
     }
 
     section {
-      padding: 100px 20px;
+      padding: 120px 20px 80px; /* top padding accounts for fixed header */
       max-width: 1100px;
       margin: auto;
       text-align: center;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     /* HOME SECTION */
     #home {
       height: 100vh;
-      background: url("group-photo.jpg") no-repeat center center/cover;
+      background: url("images/group-photo.jpg") no-repeat center center/cover;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -104,7 +118,6 @@
     /* HISTORY SECTION */
     #history {
       background: #fff;
-      padding: 80px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -225,6 +238,10 @@
     }
 
     /* PROJECTS SECTION */
+    #projects {
+      background: #fff;
+    }
+
     .project-container {
       display: flex;
       flex-wrap: wrap;
@@ -290,6 +307,43 @@
       color: white;
     }
 
+    /* PROTOTYPE SECTION */
+    #prototype {
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 40px;
+      border-top: 3px solid #0066cc;
+      border-bottom: 3px solid #0066cc;
+    }
+
+    #prototype img {
+      width: 45%;
+      border-radius: 15px;
+      border: 5px solid #d0e4ff;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      object-fit: cover;
+    }
+
+    #prototype .text {
+      width: 50%;
+      text-align: left;
+    }
+
+    #prototype h2 {
+      color: #003366;
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    #prototype p {
+      color: #444;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
     /* ABOUT SECTION */
     #about {
       background: #f8f9fb;
@@ -329,81 +383,24 @@
       margin-bottom: 15px;
     }
 
+    /* FOOTER */
     footer {
       background: #003366;
       color: white;
       text-align: center;
       padding: 15px 0;
     }
-   
-   section {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 1s ease, transform 1s ease;
-}
-
-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-#prototype {
-  background: #fff;
-  padding: 80px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 40px;
-  border-top: 3px solid #0066cc;
-  border-bottom: 3px solid #0066cc;
-}
-
-#prototype img {
-  width: 45%;
-  border-radius: 15px;
-  border: 5px solid #d0e4ff;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  object-fit: cover;
-}
-
-#prototype .text {
-  width: 50%;
-  text-align: left;
-}
-
-#prototype h2 {
-  color: #003366;
-  font-size: 2rem;
-  margin-bottom: 15px;
-}
-
-#prototype p {
-  color: #444;
-  font-size: 1rem;
-  line-height: 1.6;
-}   
-   
 
     /* RESPONSIVE DESIGN */
     @media (max-width: 768px) {
-      #history {
+      #history, #prototype {
         flex-direction: column;
         text-align: center;
       }
 
-      #history img, #history .text {
+      #history img, #history .text, #prototype img, #prototype .text {
         width: 100%;
       }
-
-     #prototype {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  #prototype img, #prototype .text {
-    width: 100%;
-  }
     }
   </style>
 </head>
@@ -418,55 +415,55 @@ section.visible {
         <li><a href="#plans">Plans</a></li>
         <li><a href="#mission">Mission</a></li>
         <li><a href="#projects">Projects</a></li>
-       <li><a href="#prototype">Prototype</a></li>
-        <li><a href="#challenges"> Challenges</a></li>
+        <li><a href="#prototype">Prototype</a></li>
+        <li><a href="#challenges">Challenges</a></li>
         <li><a href="#about">About</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- HOME SECTION -->
+  <!-- HOME -->
   <section id="home">
     <h2>Let's dive into our journey to <br> KIVU CREATIVES CO.</h2>
     <p>Empowering the youth through arts, culture, and design in Musanze, Rwanda.</p>
   </section>
 
-  <!-- HISTORY SECTION -->
+  <!-- HISTORY -->
   <section id="history">
-    <img src="musanze.jpg" alt="Kivu Creatives History">
+    <img src="images/musanze.jpg" alt="Kivu Creatives History">
     <div class="text">
-      <h2>Why MUSANZE</h2> 
-    <p> Musanze is the perfect place for arts to grow because it’s a city full of energy, creativity, and diversity. As one of Rwanda’s main tourism destinations, it attracts visitors from around the world, creating great opportunities to showcase local talent and culture. The natural beauty and vibrant community inspire artistic expression in many forms — from music and dance to photography and design. Promoting the arts in Musanze will not only celebrate the region’s unique identity but also create jobs, strengthen cultural pride, and connect youth to global opportunities</p>
+      <h2>Why MUSANZE</h2>
+      <p>Musanze is the perfect place for arts to grow because it’s a city full of energy, creativity, and diversity. As one of Rwanda’s main tourism destinations, it attracts visitors from around the world, creating great opportunities to showcase local talent and culture. Promoting arts in Musanze will celebrate the region’s identity, create jobs, strengthen cultural pride, and connect youth to global opportunities.</p>
     </div>
   </section>
 
-  <!-- FUTURE PLANS SECTION -->
+  <!-- FUTURE PLANS -->
   <section id="plans">
     <h2>Our Future Plans</h2>
     <p>We are planning new creative opportunities to inspire and support young innovators.</p>
     <div class="plans-container">
       <div class="plan-box">
-        <div class="plan-image"><img src="arts1.jpg" alt="Creative Academy"></div>
+        <div class="plan-image"><img src="images/arts1.jpg" alt="Creative Academy"></div>
         <h3>Creative Academy</h3>
         <p>A training space for youth to learn arts, photography, and cultural design skills.</p>
       </div>
       <div class="plan-box">
-        <div class="plan-image"><img src="arts.jpg" alt="Community Studio"></div>
+        <div class="plan-image"><img src="images/arts.jpg" alt="Community Studio"></div>
         <h3>Community Studio</h3>
         <p>An open hub for collaboration, media production, and youth-led art exhibitions.</p>
       </div>
       <div class="plan-box">
-        <div class="plan-image"><img src="dance.jpg" alt="Annual Creative Festival"></div>
+        <div class="plan-image"><img src="images/dance.jpg" alt="Annual Creative Festival"></div>
         <h3>Annual Creative Festival</h3>
         <p>Celebrating local talents through dance, music, and cultural innovation in Musanze.</p>
       </div>
     </div>
   </section>
 
-  <!-- MISSION SECTION -->
+  <!-- MISSION -->
   <section id="mission">
     <h2>Our Mission</h2>
-    <p>We aim to create a hub of arts, culture, and design in Musanze to empower young people with creative opportunities. Many youths have talent but lack spaces and support to grow. This hub will help them learn, collaborate, and showcase their work while connecting art with tourism and business. Our goal is to turn creativity into opportunity and drive community development.</p>
+    <p>We aim to create a hub of arts, culture, and design in Musanze to empower young people with creative opportunities.</p>
     <div class="icons">
       <div class="icon-box"><i class="fa-solid fa-paintbrush"></i><p>Arts</p></div>
       <div class="icon-box"><i class="fa-solid fa-masks-theater"></i><p>Culture</p></div>
@@ -474,28 +471,28 @@ section.visible {
     </div>
   </section>
 
-  <!-- PROJECTS SECTION -->
+  <!-- PROJECTS -->
   <section id="projects">
     <h2>Our Projects</h2>
-    <p>Here are some of the creative initiatives we've done to empower the youth through arts and culture.</p>
+    <p>Some initiatives we've done to empower youth through arts and culture.</p>
     <div class="project-container">
       <div class="project-box">
-        <img src="s.jpeg" alt="Youth Art Exhibition">
+        <img src="images/s.jpeg" alt="Youth Art Exhibition">
         <h3>🎨 Seeing Creativity Up Close</h3>
         <p>Visiting a Rwandan artist gave us a clear view of the challenges and opportunities for artists, showing how support and platforms can help them grow and turn their creativity into sustainable careers.</p>
       </div>
       <div class="project-box">
-        <img src="s.jpeg" alt="Photography for Change">
+        <img src="images/s.jpeg" alt="Photography for Change">
         <h3>📸 Photography for Change</h3>
         <p>We visited an art exhibition in Nyarutarama, showcasing multiple forms of art, owned by the artist 6ixtythre3. His hub, Kigali Multimedia Hub, served as an inspiring space for idea exploration and creative learning.</p>
       </div>
     </div>
   </section>
 
-  <!-- CHALLENGES SECTION -->
+  <!-- CHALLENGES -->
   <section id="challenges">
     <h2>Our Challenges</h2>
-    <p>Explore our creative challenges and tasks by visiting our YouTube channel.</p>
+    <p>Explore our creative challenges and tasks on our YouTube channel.</p>
     <div class="challenge-list">
       <a href="https://youtube.com/" target="_blank">🎥 Task 1: Creative Photography</a>
       <a href="https://youtube.com/" target="_blank">🎬 Task 2: Art & Culture Documentary</a>
@@ -504,35 +501,45 @@ section.visible {
     </div>
   </section>
 
- <!-- PROTOTYPE SECTION -->
-<section id="prototype">
-  <img src="prototype-sample.jpg" alt="Kivu Creatives Prototype">
-  <div class="text">
-    <h2>Our Prototype</h2>
-    <p>Here’s a look into one of our ongoing creative prototypes — blending art, innovation, and community storytelling. 
-    This project showcases how we combine traditional Rwandan culture with modern design approaches to create impactful art pieces 
-    and creative spaces for young innovators.</p>
-  </div>
-</section>
+  <!-- PROTOTYPE -->
+  <section id="prototype">
+    <img src="images/prototype-sample.jpg" alt="Kivu Creatives Prototype">
+    <div class="text">
+      <h2>Our Prototype</h2>
+      <p>This project blends traditional Rwandan culture with modern design approaches, creating impactful art pieces and creative spaces for young innovators.</p>
+    </div>
+  </section>
 
-
-  <!-- ABOUT SECTION -->
+  <!-- ABOUT -->
   <section id="about">
     <h2>About Us</h2>
-    <p>KIVU CREATIVES CO. is a youth-led creative organization based in Musanze, Rwanda. We use arts, culture, and design to empower young people and promote creative employment.</p>
+    <p>KIVU CREATIVES CO. is a youth-led creative organization in Musanze, Rwanda. We use arts, culture, and design to empower youth and promote creative employment.</p>
     <div class="team-container">
-      <div class="team-box"><img src="davina.jpeg" alt="Mwamikazi Davina"><h3>Mwamikazi Davina</h3></div>
-      <div class="team-box"><img src="missionary.jpeg" alt="Nkurunziza Missionary"><h3>Nkurunziza Missionary</h3></div>
-      <div class="team-box"><img src="annicia.jpeg" alt="Akaliza Muhizi Annicia"><h3>Akaliza Muhizi Annicia</h3></div>
-      <div class="team-box"><img src="t.jpeg" alt="Mfura Axel Aubin"><h3>Mfura Axel Aubin</h3></div>
-      <div class="team-box"><img src="IMG_3373.png" alt="Kalisa Randa"><h3>Kalisa Randa</h3></div>
-      <div class="team-box"><img src="member6.jpg" alt="Mucyo Blaise"><h3>Mucyo Blaise</h3></div>
+      <div class="team-box"><img src="images/davina.jpeg" alt="Mwamikazi Davina"><h3>Mwamikazi Davina</h3></div>
+      <div class="team-box"><img src="images/missionary.jpeg" alt="Nkurunziza Missionary"><h3>Nkurunziza Missionary</h3></div>
+      <div class="team-box"><img src="images/annicia.jpeg" alt="Akaliza Muhizi Annicia"><h3>Akaliza Muhizi Annicia</h3></div>
+      <div class="team-box"><img src="images/t.jpeg" alt="Mfura Axel Aubin"><h3>Mfura Axel Aubin</h3></div>
+      <div class="team-box"><img src="images/IMG_3373.png" alt="Kalisa Randa"><h3>Kalisa Randa</h3></div>
+      <div class="team-box"><img src="images/member6.jpg" alt="Mucyo Blaise"><h3>Mucyo Blaise</h3></div>
     </div>
   </section>
 
   <footer>
     <p>© 2025 KIVU CREATIVES CO. | All Rights Reserved</p>
   </footer>
+
+  <!-- JS for section animation -->
+  <script>
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+    sections.forEach(section => observer.observe(section));
+  </script>
 
 </body>
 </html>
