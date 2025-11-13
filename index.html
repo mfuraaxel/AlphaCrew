@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -32,7 +32,7 @@
     }
 
     header h1 {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       color: #0066cc;
       font-weight: 700;
     }
@@ -85,24 +85,62 @@
       z-index: 1;
     }
 
-    #home h2 {
+    #home h2, #home p {
       position: relative;
       z-index: 2;
-      font-size: 2.5rem;
+    }
+
+    #home h2 {
+      font-size: 2.8rem;
       line-height: 1.4;
       max-width: 800px;
     }
 
     #home p {
-      position: relative;
-      z-index: 2;
       margin-top: 20px;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
+    }
+
+    /* HISTORY SECTION */
+    #history {
+      background: #fff;
+      padding: 80px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 40px;
+      border-top: 3px solid #0066cc;
+      border-bottom: 3px solid #0066cc;
+    }
+
+    #history img {
+      width: 45%;
+      border-radius: 15px;
+      border: 4px solid #e0e0e0;
+      object-fit: cover;
+    }
+
+    #history .text {
+      width: 50%;
+      text-align: left;
+    }
+
+    #history h2 {
+      color: #003366;
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    #history p {
+      color: #444;
+      font-size: 1rem;
+      line-height: 1.6;
     }
 
     /* FUTURE PLANS SECTION */
     #plans {
-      background: #fff;
+      background: #f8fbff;
     }
 
     #plans h2 {
@@ -126,28 +164,16 @@
       width: 300px;
       padding: 20px;
       transition: transform 0.3s;
-      overflow: hidden;
     }
 
     .plan-box:hover {
       transform: translateY(-5px);
     }
 
-    .plan-image {
-      width: 100%;
-      height: 180px;
-      border-radius: 10px;
-      margin-bottom: 15px;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
     .plan-image img {
       width: 100%;
-      height: 100%;
-      object-fit: cover; /* Ensures images fit without distortion, cropping if necessary */
+      height: 180px;
+      object-fit: cover;
       border-radius: 10px;
     }
 
@@ -161,15 +187,12 @@
       color: #333;
     }
 
-    /* OTHER SECTIONS */
-    #mission, #projects, #focus, #about {
+    /* MISSION SECTION */
+    #mission {
       background: #eaf4ff;
-      margin-top: 0;
-      padding-bottom: 80px;
     }
 
-    #mission h2, #projects h2, #focus h2, #about h2 {
-      font-size: 2rem;
+    #mission h2 {
       color: #003366;
       margin-bottom: 20px;
     }
@@ -201,11 +224,6 @@
       margin-bottom: 10px;
     }
 
-    .icon-box p {
-      font-weight: 600;
-      font-size: 1rem;
-    }
-
     /* PROJECTS SECTION */
     .project-container {
       display: flex;
@@ -232,63 +250,56 @@
     .project-box img {
       width: 100%;
       height: 200px;
-      object-fit: cover; /* Ensures images fit properly */
+      object-fit: cover;
       border-radius: 10px;
       margin-bottom: 15px;
     }
 
-    .project-box h3 {
-      color: #0066cc;
-      font-size: 1.3rem;
-      margin-bottom: 10px;
+    /* CHALLENGES SECTION */
+    #challenges {
+      background: #fff;
+      padding: 80px 20px;
     }
 
-    .project-box p {
-      color: #333;
-      line-height: 1.5;
+    #challenges h2 {
+      color: #003366;
+      font-size: 2rem;
+      margin-bottom: 20px;
     }
 
-    .contact {
-      margin-top: 30px;
+    .challenge-list {
       display: flex;
       flex-direction: column;
-      gap: 10px;
       align-items: center;
-      font-size: 1rem;
+      gap: 15px;
+      margin-top: 30px;
     }
 
-    .contact i {
+    .challenge-list a {
+      text-decoration: none;
       color: #0066cc;
-      margin-right: 8px;
+      font-weight: 600;
+      border: 2px solid #0066cc;
+      border-radius: 10px;
+      padding: 10px 20px;
+      transition: all 0.3s;
     }
 
-    footer {
-      background: #003366;
+    .challenge-list a:hover {
+      background: #0066cc;
       color: white;
-      text-align: center;
-      padding: 15px 0;
     }
 
-    /* ABOUT US / TEAM SECTION */
+    /* ABOUT SECTION */
     #about {
-      padding: 80px 20px;
-      background-color: #f8f9fb;
-      text-align: center;
+      background: #f8f9fb;
     }
 
     #about h2 {
       color: #003366;
-      font-size: 2em;
       margin-bottom: 20px;
     }
 
-    #about p {
-      max-width: 700px;
-      margin: 0 auto 40px;
-      color: #444;
-    }
-
-    /* Team boxes styled like projects */
     .team-container {
       display: flex;
       flex-wrap: wrap;
@@ -302,101 +313,38 @@
       width: 280px;
       padding: 15px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
+      transition: transform 0.3s;
       text-align: center;
     }
 
     .team-box:hover {
       transform: translateY(-6px);
-      box-shadow: 0 6px 14px rgba(0,0,0,0.15);
     }
 
     .team-box img {
       width: 100%;
       height: 220px;
-      object-fit: cover; /* Ensures images fit without distortion */
+      object-fit: cover;
       border-radius: 10px;
       margin-bottom: 15px;
     }
 
-    .team-box h3 {
-      color: #003366;
-      font-size: 1.1rem;
-      margin-bottom: 10px;
+    footer {
+      background: #003366;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
     }
 
-    .social-links a {
-      margin: 0 8px;
-      color: #0066cc;
-      font-size: 1.2rem;
-      transition: color 0.3s;
-    }
-
-    .social-links a:hover {
-      color: #ff0000;
-    }
-
-    /* Contact info */
-    .contact {
-      margin-top: 50px;
-      color: #333;
-    }
-
-    .contact p {
-      margin: 5px 0;
-      font-size: 1rem;
-    }
-
-    /* Media Queries for Responsiveness */
+    /* RESPONSIVE DESIGN */
     @media (max-width: 768px) {
-      header {
+      #history {
         flex-direction: column;
-        padding: 1rem;
+        text-align: center;
       }
 
-      nav ul {
-        flex-direction: column;
-        gap: 10px;
-        margin-top: 10px;
-      }
-
-      #home h2 {
-        font-size: 2rem;
-      }
-
-      .plan-box, .project-box, .team-box {
-        width: 90%;
-      }
-
-      .plan-image {
-        height: 150px;
-      }
-
-      .project-box img {
-        height: 150px;
-      }
-
-      .team-box img {
-        height: 180px;
-      }
-
-      .icons {
-        gap: 20px;
-      }
-
-      .icon-box {
-        width: 120px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .plan-box, .project-box, .team-box {
+      #history img, #history .text {
         width: 100%;
-      }
-
-      .icons {
-        flex-direction: column;
-        align-items: center;
       }
     }
   </style>
@@ -408,10 +356,11 @@
     <nav>
       <ul>
         <li><a href="#home">Home</a></li>
+        <li><a href="#history">History</a></li>
         <li><a href="#plans">Plans</a></li>
         <li><a href="#mission">Mission</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#focus">Our Focus</a></li>
+        <li><a href="#challenges">Challenges</a></li>
         <li><a href="#about">About</a></li>
       </ul>
     </nav>
@@ -423,32 +372,35 @@
     <p>Empowering the youth through arts, culture, and design in Musanze, Rwanda.</p>
   </section>
 
+  <!-- HISTORY SECTION -->
+  <section id="history">
+    <img src="history-photo.jpg" alt="Kivu Creatives History">
+    <div class="text">
+      <h2>Our History</h2>
+      <p>KIVU CREATIVES CO. was founded by passionate youth in Musanze who believed in the power of art to transform communities. 
+      What began as a small group of creatives sharing their work has grown into a community-driven initiative focused on 
+      empowering young people through arts, photography, and cultural projects. Our journey continues to inspire the next 
+      generation of creators in Rwanda.</p>
+    </div>
+  </section>
+
   <!-- FUTURE PLANS SECTION -->
   <section id="plans">
     <h2>Our Future Plans</h2>
     <p>We are planning new creative opportunities to inspire and support young innovators.</p>
-
     <div class="plans-container">
       <div class="plan-box">
-        <div class="plan-image">
-          <img src="future1.jpg" alt="Creative Academy">
-        </div>
+        <div class="plan-image"><img src="future1.jpg" alt="Creative Academy"></div>
         <h3>Creative Academy</h3>
         <p>A training space for youth to learn arts, photography, and cultural design skills.</p>
       </div>
-
       <div class="plan-box">
-        <div class="plan-image">
-          <img src="future2.jpg" alt="Community Studio">
-        </div>
+        <div class="plan-image"><img src="future2.jpg" alt="Community Studio"></div>
         <h3>Community Studio</h3>
         <p>An open hub for collaboration, media production, and youth-led art exhibitions.</p>
       </div>
-
       <div class="plan-box">
-        <div class="plan-image">
-          <img src="future3.jpg" alt="Annual Creative Festival">
-        </div>
+        <div class="plan-image"><img src="future3.jpg" alt="Annual Creative Festival"></div>
         <h3>Annual Creative Festival</h3>
         <p>Celebrating local talents through dance, music, and cultural innovation in Musanze.</p>
       </div>
@@ -459,20 +411,10 @@
   <section id="mission">
     <h2>Our Mission</h2>
     <p>We empower the youth of Musanze, Rwanda through arts, culture, and design — creating opportunities and jobs that inspire creativity and innovation.</p>
-
     <div class="icons">
-      <div class="icon-box">
-        <i class="fa-solid fa-paintbrush"></i>
-        <p>Arts</p>
-      </div>
-      <div class="icon-box">
-        <i class="fa-solid fa-masks-theater"></i>
-        <p>Culture</p>
-      </div>
-      <div class="icon-box">
-        <i class="fa-solid fa-pen-nib"></i>
-        <p>Design</p>
-      </div>
+      <div class="icon-box"><i class="fa-solid fa-paintbrush"></i><p>Arts</p></div>
+      <div class="icon-box"><i class="fa-solid fa-masks-theater"></i><p>Culture</p></div>
+      <div class="icon-box"><i class="fa-solid fa-pen-nib"></i><p>Design</p></div>
     </div>
   </section>
 
@@ -480,16 +422,12 @@
   <section id="projects">
     <h2>Our Projects</h2>
     <p>Here are some of the creative initiatives we've done to empower the youth through arts and culture.</p>
-
     <div class="project-container">
-      <!-- Project 1 -->
       <div class="project-box">
         <img src="s.jpeg" alt="Youth Art Exhibition">
         <h3>🎨 Youth Art Exhibition</h3>
         <p>We organized a local exhibition in Musanze that showcased talented young artists, connecting them with local businesses and tourists to promote creative employment.</p>
       </div>
-
-      <!-- Project 2 -->
       <div class="project-box">
         <img src="s.jpeg" alt="Photography for Change">
         <h3>📸 Photography for Change</h3>
@@ -498,30 +436,15 @@
     </div>
   </section>
 
-  <!-- FOCUS SECTION -->
-  <section id="focus">
-    <h2>What We Focus On</h2>
-    <div class="icons">
-      <div class="icon-box">
-        <i class="fa-solid fa-palette"></i>
-        <p>Arts</p>
-      </div>
-      <div class="icon-box">
-        <i class="fa-solid fa-camera"></i>
-        <p>Photography</p>
-      </div>
-      <div class="icon-box">
-        <i class="fa-solid fa-music"></i>
-        <p>Music & Dance</p>
-      </div>
-      <div class="icon-box">
-        <i class="fa-solid fa-face-smile"></i>
-        <p>Makeup Trainings</p>
-      </div>
-      <div class="icon-box">
-        <i class="fa-solid fa-people-group"></i>
-        <p>Workshops</p>
-      </div>
+  <!-- CHALLENGES SECTION -->
+  <section id="challenges">
+    <h2>Our Challenges</h2>
+    <p>Explore our creative challenges and tasks by visiting our YouTube channel.</p>
+    <div class="challenge-list">
+      <a href="https://youtube.com/" target="_blank">🎥 Task 1: Creative Photography</a>
+      <a href="https://youtube.com/" target="_blank">🎬 Task 2: Art & Culture Documentary</a>
+      <a href="https://youtube.com/" target="_blank">🎶 Task 3: Music Collaboration</a>
+      <a href="https://youtube.com/" target="_blank">🎭 Task 4: Cultural Dance Showcase</a>
     </div>
   </section>
 
@@ -529,54 +452,13 @@
   <section id="about">
     <h2>About Us</h2>
     <p>KIVU CREATIVES CO. is a youth-led creative organization based in Musanze, Rwanda. We use arts, culture, and design to empower young people and promote creative employment.</p>
-
     <div class="team-container">
-      <!-- Member 1 -->
-      <div class="team-box">
-        <img src="davina.jpeg" alt="Mwamikazi Davina">
-        <h3>Mwamikazi Davina</h3>
-      </div>
-
-      <!-- Member 2 -->
-      <div class="team-box">
-        <img src="missionary.jpeg" alt="Nkurunziza Missionary">
-        <h3>Nkurunziza Missionary</h3>
-      </div>
-
-      <!-- Member 3 -->
-      <div class="team-box">
-        <img src="annicia.jpeg" alt="Akaliza Muhizi Annicia"> <!-- Renamed for no spaces -->
-        <h3>Akaliza Muhizi Annicia</h3>
-      </div>
-
-      <!-- Member 4 -->
-      <div class="team-box">
-        <img src="t.jpeg" alt="Mfura Axel Aubin">
-        <h3>Mfura Axel Aubin</h3>
-      </div>
-
-      <!-- Member 5 -->
-      <div class="team-box">
-        <img src="IMG_3373.png" alt="Kalisa Randa">
-        <h3>Kalisa Randa</h3>
-      </div>
-
-      <!-- Member 6 -->
-      <div class="team-box">
-        <img src="member6.jpg" alt="Mucyo Blaise">
-        <h3>Mucyo Blaise</h3>
-      </div>
-    </div>
-
-    <!-- Contact Info -->
-    <div class="contact">
-      <p><i class="fa-solid fa-location-dot"></i> Musanze, Rwanda</p>
-      <p><i class="fa-solid fa-envelope"></i> kivucreativesco@gmail.com</p>
-      <p><i class="fa-solid fa-phone"></i> +250 788 123 456</p>
-      <div class="social-links">
-        <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
-      </div>
+      <div class="team-box"><img src="davina.jpeg" alt="Mwamikazi Davina"><h3>Mwamikazi Davina</h3></div>
+      <div class="team-box"><img src="missionary.jpeg" alt="Nkurunziza Missionary"><h3>Nkurunziza Missionary</h3></div>
+      <div class="team-box"><img src="annicia.jpeg" alt="Akaliza Muhizi Annicia"><h3>Akaliza Muhizi Annicia</h3></div>
+      <div class="team-box"><img src="t.jpeg" alt="Mfura Axel Aubin"><h3>Mfura Axel Aubin</h3></div>
+      <div class="team-box"><img src="IMG_3373.png" alt="Kalisa Randa"><h3>Kalisa Randa</h3></div>
+      <div class="team-box"><img src="member6.jpg" alt="Mucyo Blaise"><h3>Mucyo Blaise</h3></div>
     </div>
   </section>
 
