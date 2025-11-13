@@ -335,6 +335,55 @@
       text-align: center;
       padding: 15px 0;
     }
+   
+   section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#prototype {
+  background: #fff;
+  padding: 80px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  border-top: 3px solid #0066cc;
+  border-bottom: 3px solid #0066cc;
+}
+
+#prototype img {
+  width: 45%;
+  border-radius: 15px;
+  border: 5px solid #d0e4ff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  object-fit: cover;
+}
+
+#prototype .text {
+  width: 50%;
+  text-align: left;
+}
+
+#prototype h2 {
+  color: #003366;
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+#prototype p {
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.6;
+}   
+   
 
     /* RESPONSIVE DESIGN */
     @media (max-width: 768px) {
@@ -346,6 +395,15 @@
       #history img, #history .text {
         width: 100%;
       }
+
+     #prototype {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #prototype img, #prototype .text {
+    width: 100%;
+  }
     }
   </style>
 </head>
@@ -360,7 +418,8 @@
         <li><a href="#plans">Plans</a></li>
         <li><a href="#mission">Mission</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#challenges">Challenges</a></li>
+       <li><a href="#prototype">Prototype</a></li>
+        <li><a href="#challenges"> Challenges</a></li>
         <li><a href="#about">About</a></li>
       </ul>
     </nav>
@@ -422,13 +481,13 @@
     <div class="project-container">
       <div class="project-box">
         <img src="s.jpeg" alt="Youth Art Exhibition">
-        <h3>🎨 Youth Art Exhibition</h3>
-        <p>We organized a local exhibition in Musanze that showcased talented young artists, connecting them with local businesses and tourists to promote creative employment.</p>
+        <h3>🎨 Seeing Creativity Up Close</h3>
+        <p>Visiting a Rwandan artist gave us a clear view of the challenges and opportunities for artists, showing how support and platforms can help them grow and turn their creativity into sustainable careers.</p>
       </div>
       <div class="project-box">
         <img src="s.jpeg" alt="Photography for Change">
         <h3>📸 Photography for Change</h3>
-        <p>This project trained over 30 young photographers, helping them tell community stories through visuals and develop freelance photography skills for income generation.</p>
+        <p>We visited an art exhibition in Nyarutarama, showcasing multiple forms of art, owned by the artist 6ixtythre3. His hub, Kigali Multimedia Hub, served as an inspiring space for idea exploration and creative learning.</p>
       </div>
     </div>
   </section>
@@ -444,6 +503,18 @@
       <a href="https://youtube.com/" target="_blank">🎭 Task 4: Cultural Dance Showcase</a>
     </div>
   </section>
+
+ <!-- PROTOTYPE SECTION -->
+<section id="prototype">
+  <img src="prototype-sample.jpg" alt="Kivu Creatives Prototype">
+  <div class="text">
+    <h2>Our Prototype</h2>
+    <p>Here’s a look into one of our ongoing creative prototypes — blending art, innovation, and community storytelling. 
+    This project showcases how we combine traditional Rwandan culture with modern design approaches to create impactful art pieces 
+    and creative spaces for young innovators.</p>
+  </div>
+</section>
+
 
   <!-- ABOUT SECTION -->
   <section id="about">
