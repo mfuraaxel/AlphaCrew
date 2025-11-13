@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KIVU CREATIVES CO.</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #f9f9f9;
+      color: #222;
+    }
+
+    header {
+      position: fixed;
+      width: 100%;
+      background: rgba(255,255,255,0.95);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      color: #0066cc;
+      font-weight: 700;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #222;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #0066cc;
+    }
+
+    section {
+      padding: 100px 20px;
+      max-width: 1100px;
+      margin: auto;
+      text-align: center;
+    }
+
+    /* HOME SECTION */
+    #home {
+      height: 100vh;
+      background: url("group-photo.jpg") no-repeat center center/cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      color: white;
+      text-align: center;
+    }
+
+    #home::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 1;
+    }
+
+    #home h2 {
+      position: relative;
+      z-index: 2;
+      font-size: 2.5rem;
+      line-height: 1.4;
+      max-width: 800px;
+    }
+
+    #home p {
+      position: relative;
+      z-index: 2;
+      margin-top: 20px;
+      font-size: 1.2rem;
+    }
+
+    /* FUTURE PLANS SECTION */
+    #plans {
+      background: #fff;
+    }
+
+    #plans h2 {
+      font-size: 2rem;
+      color: #003366;
+      margin-bottom: 10px;
+    }
+
+    .plans-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .plan-box {
+      background: #f0f8ff;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 300px;
+      padding: 20px;
+      transition: transform 0.3s;
+      overflow: hidden;
+    }
+
+    .plan-box:hover {
+      transform: translateY(-5px);
+    }
+
+    .plan-image {
+      width: 100%;
+      height: 180px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .plan-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensures images fit without distortion, cropping if necessary */
+      border-radius: 10px;
+    }
+
+    .plan-box h3 {
+      color: #0066cc;
+      margin-bottom: 10px;
+    }
+
+    .plan-box p {
+      font-size: 0.95rem;
+      color: #333;
+    }
+
+    /* OTHER SECTIONS */
+    #mission, #projects, #focus, #about {
+      background: #eaf4ff;
+      margin-top: 0;
+      padding-bottom: 80px;
+    }
+
+    #mission h2, #projects h2, #focus h2, #about h2 {
+      font-size: 2rem;
+      color: #003366;
+      margin-bottom: 20px;
+    }
+
+    .icons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 30px;
+    }
+
+    .icon-box {
+      width: 150px;
+      background: #fff;
+      border-radius: 15px;
+      padding: 20px;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .icon-box:hover {
+      transform: translateY(-5px);
+      background: #d9ecff;
+    }
+
+    .icon-box i {
+      font-size: 2rem;
+      color: #0066cc;
+      margin-bottom: 10px;
+    }
+
+    .icon-box p {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    /* PROJECTS SECTION */
+    .project-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .project-box {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 400px;
+      padding: 20px;
+      text-align: left;
+      transition: transform 0.3s;
+    }
+
+    .project-box:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-box img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover; /* Ensures images fit properly */
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .project-box h3 {
+      color: #0066cc;
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+
+    .project-box p {
+      color: #333;
+      line-height: 1.5;
+    }
+
+    .contact {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+      font-size: 1rem;
+    }
+
+    .contact i {
+      color: #0066cc;
+      margin-right: 8px;
+    }
+
+    footer {
+      background: #003366;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+    }
+
+    /* ABOUT US / TEAM SECTION */
+    #about {
+      padding: 80px 20px;
+      background-color: #f8f9fb;
+      text-align: center;
+    }
+
+    #about h2 {
+      color: #003366;
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    #about p {
+      max-width: 700px;
+      margin: 0 auto 40px;
+      color: #444;
+    }
+
+    /* Team boxes styled like projects */
+    .team-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .team-box {
+      background: #fff;
+      border-radius: 15px;
+      width: 280px;
+      padding: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-align: center;
+    }
+
+    .team-box:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+    }
+
+    .team-box img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover; /* Ensures images fit without distortion */
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .team-box h3 {
+      color: #003366;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    .social-links a {
+      margin: 0 8px;
+      color: #0066cc;
+      font-size: 1.2rem;
+      transition: color 0.3s;
+    }
+
+    .social-links a:hover {
+      color: #ff0000;
+    }
+
+    /* Contact info */
+    .contact {
+      margin-top: 50px;
+      color: #333;
+    }
+
+    .contact p {
+      margin: 5px 0;
+      font-size: 1rem;
+    }
+
+    /* Media Queries for Responsiveness */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        padding: 1rem;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      #home h2 {
+        font-size: 2rem;
+      }
+
+      .plan-box, .project-box, .team-box {
+        width: 90%;
+      }
+
+      .plan-image {
+        height: 150px;
+      }
+
+      .project-box img {
+        height: 150px;
+      }
+
+      .team-box img {
+        height: 180px;
+      }
+
+      .icons {
+        gap: 20px;
+      }
+
+      .icon-box {
+        width: 120px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .plan-box, .project-box, .team-box {
+        width: 100%;
+      }
+
+      .icons {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>KIVU CREATIVES CO.</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#plans">Plans</a></li>
+        <li><a href="#mission">Mission</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#focus">Our Focus</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HOME SECTION -->
+  <section id="home">
+    <h2>Let's dive into our journey to <br> KIVU CREATIVES CO.</h2>
+    <p>Empowering the youth through arts, culture, and design in Musanze, Rwanda.</p>
+  </section>
+
+  <!-- FUTURE PLANS SECTION -->
+  <section id="plans">
+    <h2>Our Future Plans</h2>
+    <p>We are planning new creative opportunities to inspire and support young innovators.</p>
+
+    <div class="plans-container">
+      <div class="plan-box">
+        <div class="plan-image">
+          <img src="future1.jpg" alt="Creative Academy">
+        </div>
+        <h3>Creative Academy</h3>
+        <p>A training space for youth to learn arts, photography, and cultural design skills.</p>
+      </div>
+
+      <div class="plan-box">
+        <div class="plan-image">
+          <img src="future2.jpg" alt="Community Studio">
+        </div>
+        <h3>Community Studio</h3>
+        <p>An open hub for collaboration, media production, and youth-led art exhibitions.</p>
+      </div>
+
+      <div class="plan-box">
+        <div class="plan-image">
+          <img src="future3.jpg" alt="Annual Creative Festival">
+        </div>
+        <h3>Annual Creative Festival</h3>
+        <p>Celebrating local talents through dance, music, and cultural innovation in Musanze.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION SECTION -->
+  <section id="mission">
+    <h2>Our Mission</h2>
+    <p>We empower the youth of Musanze, Rwanda through arts, culture, and design — creating opportunities and jobs that inspire creativity and innovation.</p>
+
+    <div class="icons">
+      <div class="icon-box">
+        <i class="fa-solid fa-paintbrush"></i>
+        <p>Arts</p>
+      </div>
+      <div class="icon-box">
+        <i class="fa-solid fa-masks-theater"></i>
+        <p>Culture</p>
+      </div>
+      <div class="icon-box">
+        <i class="fa-solid fa-pen-nib"></i>
+        <p>Design</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section id="projects">
+    <h2>Our Projects</h2>
+    <p>Here are some of the creative initiatives we've done to empower the youth through arts and culture.</p>
+
+    <div class="project-container">
+      <!-- Project 1 -->
+      <div class="project-box">
+        <img src="s.jpeg" alt="Youth Art Exhibition">
+        <h3>🎨 Youth Art Exhibition</h3>
+        <p>We organized a local exhibition in Musanze that showcased talented young artists, connecting them with local businesses and tourists to promote creative employment.</p>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-box">
+        <img src="s.jpeg" alt="Photography for Change">
+        <h3>📸 Photography for Change</h3>
+        <p>This project trained over 30 young photographers, helping them tell community stories through visuals and develop freelance photography skills for income generation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOCUS SECTION -->
+  <section id="focus">
+    <h2>What We Focus On</h2>
+    <div class="icons">
+      <div class="icon-box">
+        <i class="fa-solid fa-palette"></i>
+        <p>Arts</p>
+      </div>
+      <div class="icon-box">
+        <i class="fa-solid fa-camera"></i>
+        <p>Photography</p>
+      </div>
+      <div class="icon-box">
+        <i class="fa-solid fa-music"></i>
+        <p>Music & Dance</p>
+      </div>
+      <div class="icon-box">
+        <i class="fa-solid fa-face-smile"></i>
+        <p>Makeup Trainings</p>
+      </div>
+      <div class="icon-box">
+        <i class="fa-solid fa-people-group"></i>
+        <p>Workshops</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>KIVU CREATIVES CO. is a youth-led creative organization based in Musanze, Rwanda. We use arts, culture, and design to empower young people and promote creative employment.</p>
+
+    <div class="team-container">
+      <!-- Member 1 -->
+      <div class="team-box">
+        <img src="davina.jpeg" alt="Mwamikazi Davina">
+        <h3>Mwamikazi Davina</h3>
+      </div>
+
+      <!-- Member 2 -->
+      <div class="team-box">
+        <img src="missionary.jpeg" alt="Nkurunziza Missionary">
+        <h3>Nkurunziza Missionary</h3>
+      </div>
+
+      <!-- Member 3 -->
+      <div class="team-box">
+        <img src="annicia2.jpeg" alt="Akaliza Muhizi Annicia"> <!-- Renamed for no spaces -->
+        <h3>Akaliza Muhizi Annicia</h3>
+      </div>
+
+      <!-- Member 4 -->
+      <div class="team-box">
+        <img src="t.jpeg" alt="Mfura Axel Aubin">
+        <h3>Mfura Axel Aubin</h3>
+      </div>
+
+      <!-- Member 5 -->
+      <div class="team-box">
+        <img src="member5.jpg" alt="Kalisa Randa">
+        <h3>Kalisa Randa</h3>
+      </div>
+
+      <!-- Member 6 -->
+      <div class="team-box">
+        <img src="member6.jpg" alt="Mucyo Blaise">
+        <h3>Mucyo Blaise</h3>
+      </div>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="contact">
+      <p><i class="fa-solid fa-location-dot"></i> Musanze, Rwanda</p>
+      <p><i class="fa-solid fa-envelope"></i> kivucreativesco@gmail.com</p>
+      <p><i class="fa-solid fa-phone"></i> +250 788 123 456</p>
+      <div class="social-links">
+        <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 KIVU CREATIVES CO. | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>
